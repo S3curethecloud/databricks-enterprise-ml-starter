@@ -16,10 +16,16 @@ from mlflow.models import infer_signature
 from sklearn.datasets import load_iris
 
 # Support both Databricks Repos/Workspace files and local execution.
-repo_root = Path.cwd()
-if not (repo_root / "src").exists():
-    repo_root = Path("/Workspace") / Path.cwd().name
-sys.path.insert(0, str(repo_root / "src"))
+repo_root = Path.cwd().parent
+src_path = repo_root / "src"
+
+if not src_path.exists():
+    raise RuntimeError(
+        f"Expected project source directory was not found: {src_path}. "
+        f"Current working directory: {Path.cwd()}"
+    )
+
+sys.path.insert(0, str(src_path))
 
 from databricks_ml_starter.model import train_model
 
