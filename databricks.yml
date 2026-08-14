@@ -4,12 +4,6 @@ bundle:
 include:
   - resources/*.yml
 
-artifacts:
-  default:
-    type: whl
-    build: python -m build --wheel
-    path: .
-
 sync:
   include:
     - notebooks/**

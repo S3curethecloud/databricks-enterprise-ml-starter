@@ -3,16 +3,8 @@ resources:
     ml_training_job:
       name: databricks-enterprise-ml-starter
 
-      environments:
-        - environment_key: default
-          spec:
-            environment_version: "4"
-            dependencies:
-              - ../dist/*.whl
-
       tasks:
         - task_key: train_iris_model
-          environment_key: default
           notebook_task:
             notebook_path: ../notebooks/01_train_model.py
             source: WORKSPACE
