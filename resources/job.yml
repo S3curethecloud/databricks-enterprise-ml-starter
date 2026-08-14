@@ -7,3 +7,5 @@ resources:
           notebook_task:
             notebook_path: ../notebooks/01_train_model.py
             source: WORKSPACE
+          libraries:
+            - whl: ../dist/*.whl
