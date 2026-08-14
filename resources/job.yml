@@ -1,0 +1,10 @@
+resources:
+  jobs:
+    ml_training_job:
+      name: databricks-enterprise-ml-starter
+      tasks:
+        - task_key: train_iris_model
+          existing_cluster_id: ${var.cluster_id}
+          notebook_task:
+            notebook_path: ../notebooks/01_train_model.py
+            source: WORKSPACE

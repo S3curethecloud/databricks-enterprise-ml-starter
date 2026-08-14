@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "databricks-enterprise-ml-starter"
+version = "0.1.0"
+description = "Small Databricks MLflow training starter"
+requires-python = ">=3.10"
+dependencies = [
+  "mlflow>=3.0,<4",
+  "scikit-learn>=1.5,<2",
+  "pandas>=2.2,<3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
