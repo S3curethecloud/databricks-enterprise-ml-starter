@@ -4,16 +4,10 @@ bundle:
 include:
   - resources/*.yml
 
-variables:
-  cluster_id:
-    description: Existing Databricks cluster ID used by the starter job.
-
 sync:
   include:
     - notebooks/**
     - src/**
-
-resources: {}
 
 targets:
   dev:
